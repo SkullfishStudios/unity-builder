@@ -19,8 +19,9 @@ async function runMain() {
     const buildParameters = await BuildParameters.create();
     const baseImage = new ImageTag(buildParameters);
 
+    
     if (buildParameters.providerStrategy === 'local') {
-      core.info('Building locally');
+      core.info('Building locally Skullfish');
       core.info('params '+buildParameters);
       await PlatformSetup.setup(buildParameters, actionFolder);
       if (process.platform === 'darwin') {
