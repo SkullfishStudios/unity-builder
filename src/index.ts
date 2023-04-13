@@ -21,6 +21,7 @@ async function runMain() {
 
     if (buildParameters.providerStrategy === 'local') {
       core.info('Building locally');
+      core.info('params '+buildParameters);
       await PlatformSetup.setup(buildParameters, actionFolder);
       if (process.platform === 'darwin') {
         MacBuilder.run(actionFolder);
